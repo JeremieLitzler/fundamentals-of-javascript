@@ -1,0 +1,38 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="text">Enter your text below.</label>
+    <textarea id="text"></textarea>
+
+    <p>
+      You've written
+      <strong
+        ><span id="character-count-ku">0</span> characters (listening to
+        <i>keyup</i>)</strong
+      >.
+    </p>
+    <p>
+      You've written
+      <strong
+        ><span id="character-count-kd">0</span> characters (listening to
+        <i>keydown</i>)</strong
+      >.
+    </p>
+  </body>
+  <script>
+    const textArea = document.querySelector('textarea');
+    const counterKu = document.querySelector('#character-count-ku');
+    const counterKd = document.querySelector('#character-count-kd');
+
+    textArea.addEventListener('keyup', (event) => {
+      counterKu.innerHTML = textArea.value.length;
+    });
+    textArea.addEventListener('keydown', (event) => {
+      counterKd.innerHTML = textArea.value.length;
+    });
+  </script>
+</html>
